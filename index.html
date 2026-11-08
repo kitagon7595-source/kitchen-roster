@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="th">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#fff0df">
+<title>ตารางเวรครัว</title>
+<style>
+body{margin:0;background:#fffcf7;color:#281c14;font:16px/1.55 system-ui,Tahoma,sans-serif;padding:24px}
+main{max-width:400px;margin:8vh auto;border:1px solid #e8dacf;border-radius:20px;overflow:hidden;background:#fff}
+header,section{padding:20px}header{background:#fff0df}h1,p{margin:0}h1{font-size:25px}small{color:#68584a}
+a{display:block;margin-top:16px;text-align:center;padding:12px;border-radius:10px;background:#a43f10;color:white;text-decoration:none;font-weight:bold}
+[hidden]{display:none}
+</style>
+<main>
+<header><small>ทีมครัว</small><h1>ตารางเวรครัว</h1></header>
+<section>
+<p id="status">ยังไม่เปิดให้ใช้งาน</p>
+<a id="launch" hidden>เปิดตารางเวร</a>
+</section>
+</main>
+<script>
+// วาง URL /exec จาก Apps Script ที่นี่ ไม่ใส่รหัสทีมในไฟล์นี้
+const APP_URL = '';
+if (/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(APP_URL)) {
+  const link=document.getElementById('launch');
+  link.href=APP_URL;
+  link.hidden=false;
+  document.getElementById('status').textContent='ดูเวรและแจ้งหยุด ลา หรือแลกเวร';
+}
+</script>
+</html>
